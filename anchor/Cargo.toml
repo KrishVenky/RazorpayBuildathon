@@ -1,0 +1,15 @@
+[workspace]
+members = ["programs/*"]
+resolver = "2"
+
+[profile.release]
+overflow-checks = true
+lto = "thin"
+
+[profile.dev]
+overflow-checks = true
+
+[patch.crates-io]
+crypto-common = { path = "./vendor/crypto-common" }
+block-buffer = { path = "./vendor/block-buffer" }
+toml_datetime = { path = "./vendor/toml_datetime" }
